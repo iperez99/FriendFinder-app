@@ -31,7 +31,7 @@
         <h3><strong>Question 1</strong></h3>
         <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
         <div class="input-field">
-            <select id="q1" class="chosen-select">
+            <select id="q1">
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -43,7 +43,7 @@
         <h3><strong>Question 2</strong></h3>
         <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
         <div class="input-field">
-            <select id="q2" class="chosen-select">
+            <select id="q2">
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -55,7 +55,7 @@
         <h3><strong>Question 3</strong></h3>
         <h4>You find it easy to stay relaxed and focused even when there is some pressure</h4>
         <div class="input-field">
-            <select id="q3" class="chosen-select">
+            <select id="q3">
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -67,7 +67,7 @@
         <h3><strong>Question 4</strong></h3>
         <h4>You rarely do something just out of sheer curiosity.</h4>
         <div class="input-field">
-            <select id="q4" class="chosen-select">
+            <select id="q4">
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -77,9 +77,9 @@
             </select>
         </div>
         <h3><strong>Question 5</strong></h3>
-        <h4>People can rarely upset you.</h4>
+        <h4>YPeople can rarely upset you.</h4>
         <div class="input-field">
-            <select id="q5" class="chosen-select">
+            <select id="q5">
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -91,7 +91,7 @@
         <h3><strong>Question 6</strong></h3>
         <h4>It is often difficult for you to relate to other people’s feelings.</h4>
         <div class="input-field">
-            <select id="q6" class="chosen-select">
+            <select id="q6">
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -103,7 +103,7 @@
         <h3><strong>Question 7</strong></h3>
         <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
         <div class="input-field">
-            <select id="q7" class="chosen-select">
+            <select id="q7">
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -115,7 +115,7 @@
         <h3><strong>Question 8</strong></h3>
         <h4>You rarely get carried away by fantasies and ideas.</h4>
         <div class="input-field">
-            <select id="q8" class="chosen-select">
+            <select id="q8">
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -128,7 +128,7 @@
         <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or
             not.</h4>
         <div class="input-field">
-            <select id="q9" class="chosen-select">
+            <select id="q9">
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -140,7 +140,7 @@
         <h3><strong>Question 10</strong></h3>
         <h4>You feel more energetic after spending time with a group of people.</h4>
         <div class="input-field">
-            <select id="q10" class="chosen-select">
+            <select id="q10">
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -149,49 +149,25 @@
                 <option value="5">5 (Strongly Agree)</option>
             </select>
         </div>
-        <br>
+
         <br>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"
-                aria-hidden="true"></i>
-            Submit</button>
-
-        <br>
-        <br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+            <i class="fa fa-check-circle"></i>
+            Submit
+        </button>
 
         <footer class="footer">
             <div class="container">
-                <p><a>Created by Ismael Alexis Perez</a> | <a href="https://github.com/iperez99" target="_blank">Check
+
+                <p><a href="/api/friends">View API Friends list</a> | <a>Created by Ismael Alexis Perez</a> | <a
+                        href="https://github.com/iperez99" target="_blank">Check
                         out my Github
                         Repo </a><i class="fab fa-github-square fa-2x"></i>
                 </p>
             </div>
         </footer>
-    </div>
-    <!-- Modal for match result -->
-    <div id="resultsModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        &times;
-                    </button>
-                    <h2 class="modal-title"><strong>Best Match</strong></h2>
-                </div>
-
-                <div class="modal-body">
-                    <h2 id="matchName"></h2>
-                    <img id="matchImg" src="https://via.placeholder.com/400x400"
-                        alt="Placeholder image in case user pic doesn't show" />
-                </div>
-                <div class="modal-footer">
-                    <button id="submit" type="button" class="btn btn-default" data-dismiss="modal">
-                        Close
-                    </button>
-                </div>
-            </div>
-        </div>
     </div>
 
 
@@ -206,52 +182,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
-    <!-- Capture User input -->
-    <script type="text/javascript">
-        $("#submit").on("click", function () {
-
-            // validation//
-
-            function validateForm() {
-                var isValid = true;
-                $(".form-control").each(function () {
-                    if ($(this).val() === "") isValid = false;
-                });
-                $(".chosen-select").each(function () {
-                    if ($(this).val() === "") isValid = false;
-                });
-                return isValid;
-            }
-            if (validateForm() == true) {
-                var userData = {
-                    name: $("#name").val(),
-                    photo: $("#photo").val(),
-                    scores: [
-                        $("#q1").val(),
-                        $("#q2").val(),
-                        $("#q3").val(),
-                        $("#q4").val(),
-                        $("#q5").val(),
-                        $("#q6").val(),
-                        $("#q7").val(),
-                        $("#q8").val(),
-                        $("#q9").val(),
-                        $("#q10").val()
-                    ]
-                };
-                var currentURL = window.location.origin;
-                $.post(currentURL + "/api/friends", userData, function (data) {
-                    $("#matchName").text(data.name);
-                    $("#matchImg").attr("src", data.photo);
-                    $("#resultsModal").modal("toggle");
-                });
-            } else {
-                alert("Please fill out all fields before submitting!");
-            }
-            return false;
-        });
-    </script>
 </body>
 
 </html>
