@@ -7,55 +7,41 @@ module.exports = function (app) {
         res.json(friends);
     });
 
-    //API POST request
+    // API POST Requests
     app.post("/api/friends", function (req, res) {
-        var bestMatch = {
-            name: "",
-            photo: "",
-            friendDifference: 100
-        };
+        var userScore = req.body.scores;
+        var scoresArr = [];
+        var bestMatch = 0;
 
-        console.log(req.body);
-
-        //capture the users input
-        var userData = req.body;
-        var userScores = userData.scores;
-
-        console.log(userScores);
-
-        //compute the difference of each question
-
-        var totalDifference = 0;
-
-        //nested for loop to get the best match//
 
         for (var i = 0; i < friends.length; i++) {
-            console.log(friends[i]);
-            totalDifference = 0;
-
-            //loop to check the scores of friend from array
-            for (var j = 0; j < friends[j].scores; j++) {
-
-                //using math absolute function to make sure there are no negative scores.
-
-                totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
-                //If the sum of differences is less than the differeces of the current best match//
-
-                if (totalDifference <= bestMatch.friendDifference) {
-                    bestMatch.name = friends[i].name;
-                    bestMatch.photo = friends[i].photo;
-                    bestMatch.friendDifference = totalDifference;
-
-                }
+            var scoreDiff = 0;
+            for (var j = 0; j < userScore.length; j++) {
+                scoreDiff += (Math.abs(parseInt(friends[i].scores[j]) - parseInt(userScore[j])))
             }
-
+            scoresArr.push(scoreDiff);
         }
-        //save the users data to database
-        friends.push(userData);
-        
-        //return the best match back to HTML in JSON
-        res.json(bestMatch);
+
+        // loop through ours scoresArr
+        for (var i = 0; i < scoresArr.length; i++) {
+            if (scoresArr[i] <= scoresArr[bestMatch]) {
+                bestMatch = i;
+            }
+        }
+
+        // return the best match
+        var bestMate = friends[bestMatch];
+        res.json(bestMate);
+        friends.push(req.body)
+
     });
 
 
-}
+    app.post("/api/clear", (req, res) => {
+        // clear out the arrays of data
+        friends.length = [];
+        res.json({
+            ok: true
+        });
+    });
+};
